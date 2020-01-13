@@ -5,8 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-void ft_sumdig(int n)
-{
+void ft_sumdig(int n) {
     int result = 0;
 
     while (n >= 10)
@@ -19,10 +18,9 @@ void ft_sumdig(int n)
 }
 
 int main() {
-	
     int n;
+
     scanf("%d", &n);
     ft_sumdig(n);
-    return 0;
+    return (0);
 }
-

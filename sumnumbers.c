@@ -5,8 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main()
-{
+int main() {
     int i1 = 0;
     int i2 = 0;
     float f1 = 0;
@@ -19,5 +18,5 @@ int main()
     printf("%.1f ", (f1 + f2));
     printf("%.1f\n", (f1 - f2));
 
-    return 0;
+    return (0);
 }

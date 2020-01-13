@@ -5,8 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
-int main() 
-{
+int main() {
   char  ch;
   char  s[99];
   char  sen[99];
@@ -17,5 +16,5 @@ int main()
   printf("%c\n", ch);
   printf("%s\n", s);
   printf("%s", sen);
-  return 0;
+  return (0);
 }
