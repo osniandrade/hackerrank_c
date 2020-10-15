@@ -4,10 +4,9 @@
 #include <stdlib.h>
 
 void update(int *a,int *b) {
-    int temp;
-
-    temp = *a;
-    *a = temp + *b;
+    int temp = *a;
+    
+    *a = *a + *b;
     *b = abs(temp - *b);
 }
 

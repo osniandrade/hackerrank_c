@@ -2,17 +2,16 @@
 
 #include <stdio.h>
 
-int max_of_four(int a, int b, int c, int d) {
-    int max = a;
-
-    if (b > max)
-        max = b;
-    if (c > max)
-        max = c;
-    if (d > max)
-        max = d;
-
-    return (max);
+int max_of_four(int a, int b, int c, int d)
+{
+    if (b > a)
+        a = b;
+    if (c > a)
+        a = c;
+    if (d > a)
+        a = d;
+    
+    return(a);
 }
 
 int main() {

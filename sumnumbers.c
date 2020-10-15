@@ -6,17 +6,16 @@
 #include <stdlib.h>
 
 int main() {
-    int i1 = 0;
-    int i2 = 0;
-    float f1 = 0;
-    float f2 = 0;
+	int a = 0;
+    int b = 0;
+    float c = 0;
+    float d = 0;
 
-    scanf("%d %d", &i1, &i2);
-    scanf("%f %f", &f1, &f2);
-    printf("%d ", (i1 + i2));
-    printf("%d\n", (i1 - i2));
-    printf("%.1f ", (f1 + f2));
-    printf("%.1f\n", (f1 - f2));
+    scanf("%d %d", &a, &b);
+    scanf("%f %f", &c, &d);
+
+    printf("%d %d\n", a + b, a - b);
+    printf("%.1f %.1f\n", c + d, c - d);
 
     return (0);
 }
