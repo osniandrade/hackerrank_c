@@ -5,21 +5,36 @@
 #include <math.h>
 #include <stdlib.h>
 
-void printc(int n, int cx, int cy)
+void prtspc(int cy, int max)
 {
-    int max = (n * 2) - 1;
-
-    if (cy == 0 || cy == (max - 1))
-        printf("%d", n);
-    else
-        if (cx == 0 || cx == (max - 1))
-            printf("%d", n);
-        else
-            printf("%d", abs(n - cx));
     if (cy == (max - 1))
         printf("\n");
     else
         printf("_");
+}
+
+void prtmid(int n, int cx, int cy, int max)
+{
+    //printf("%d", abs(n - cx));
+    if ((cx == (n-cx) || cy == (n-cy)) || (cx == (n-cx+max) || cy == (n-cy+max)))
+        printf("X");
+    else
+        printf("O");
+    prtspc(cy, max);
+}
+
+// working on getting the rim the coordinate is on
+void prtrim(int n, int cx, int cy, int max)
+{
+    printf("%d", n);
+    prtspc(cy, max);
+}
+
+int getrim(int n, int cx, int cy, int max)
+{
+    if ((cx == 0) || (cy == 0) || (cx == max) || cy == max)
+        return(n);
+    
 }
 
 int main()
@@ -34,7 +49,10 @@ int main()
     {
         while (cy < max)
         {
-            printc(n, cx, cy);
+            if ((cy == 0 || cy == (max - 1)) || (cx == 0 || cx == (max - 1)))
+                prtrim(n, cx, cy, max);
+            else
+                prtmid(n, cx, cy, max);
             cy++;
         }
         cy = 0;
