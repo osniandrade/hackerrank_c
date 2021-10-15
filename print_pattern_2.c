@@ -5,59 +5,47 @@
 #include <math.h>
 #include <stdlib.h>
 
-void prtspc(int cy, int max)
+void    ft_printborder(int n)
 {
-    if (cy == (max - 1))
-        printf("\n");
+    printf("%d ", n);
+}
+
+void    ft_printnum(int col_lin, int n, int x, int y)
+{
+    int mid = (col_lin - 1) / 2;
+    int op = 0;
+    if (x == 0 || x == col_lin - 1 || y == 0 || y == col_lin - 1)
+        ft_printborder(n);
     else
-        printf("_");
-}
-
-void prtmid(int n, int cx, int cy, int max)
-{
-    //printf("%d", abs(n - cx));
-    if ((cx == (n-cx) || cy == (n-cy)) || (cx == (n-cx+max) || cy == (n-cy+max)))
-        printf("X");
-    else
-        printf("O");
-    prtspc(cy, max);
-}
-
-// working on getting the rim the coordinate is on
-void prtrim(int n, int cx, int cy, int max)
-{
-    printf("%d", n);
-    prtspc(cy, max);
-}
-
-int getrim(int n, int cx, int cy, int max)
-{
-    if ((cx == 0) || (cy == 0) || (cx == max) || cy == max)
-        return(n);
-    
-}
-
-int main()
-{
-    int n = 7;
-    // scanf("%d", &n);
-    int cx = 0;
-    int cy = 0;
-    int max = (n * 2) - 1;
-
-    while (cx < max)
-    {
-        while (cy < max)
+        if (x == mid && y == mid)
+            printf("%d ", 1);
+        else
         {
-            if ((cy == 0 || cy == (max - 1)) || (cx == 0 || cx == (max - 1)))
-                prtrim(n, cx, cy, max);
-            else
-                prtmid(n, cx, cy, max);
-            cy++;
+            op = (x > y) ? x - y : y - x;
+            printf("%d ", op);
         }
-        cy = 0;
-        cx++;
+}
+
+int main() 
+{
+
+    int n;
+    int x = 0;
+    int y = 0;
+    int col_lin = 0;
+    scanf("%d", &n);
+  	// Complete the code to print the pattern.
+    col_lin = n + (n - 1);
+    while (x < col_lin)
+    {
+        while (y < col_lin)
+        {
+            ft_printnum(col_lin, n, x, y);
+            y++;
+        }
+        printf("\n");
+        y = 0;
+        x++;
     }
-  	
-    return (0);
+    return 0;
 }
